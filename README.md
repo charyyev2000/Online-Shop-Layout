@@ -1,4 +1,4 @@
-# Aloha-Homepage
+# Shop-Online-Layout
 
 ## Table of Contents
 1. Purpose
