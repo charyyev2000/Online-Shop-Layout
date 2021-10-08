@@ -1,0 +1,716 @@
+/* For more details on how and why I organized my css the way I did, please read the readme */
+
+/*
+=========================
+General Styling
+=========================
+*/
+/* global styles, styles that permeate throughout my css */
+
+/* limit content area to 1240px width for large screens as requested in project outline */
+body {
+  font-size: 14px;
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* breakpoint to change font for tablet and desktop viewports */
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/*
+=========================
+Header Styling
+=========================
+*/
+
+/* To position header and format it's contents */
+header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  z-index: 5;
+
+  padding: 2% 5%;
+  top: 0px;
+  width: 100%;
+
+  background-color: white;
+}
+
+/* Sizing my Logo */
+#logo {
+  width: 35%;
+  max-width: 156px;
+}
+#logo a {
+  font-size: 1.5rem;
+  color: rgb(153, 143, 143);
+}
+
+#logo a img {
+  width: 100%;
+}
+
+/* Sizing shopping cart */
+#shopping-cart {
+  position: relative;
+
+  width: 15%;
+  height: 15%;
+  max-width: 60px;
+}
+
+#shopping-cart a img {
+  width: 100%;
+}
+
+/* Styles to format total items in cart 
+The bubble should appear in upper right of shopping cart icon*/
+.items-in-cart {
+  position: absolute;
+  top: 0;
+  left: 65%;
+
+  margin: 0;
+  padding: 10%;
+  height: 40%;
+  width: 40%;
+
+  color: white;
+  background-color: #e2574c;
+  border: 0px solid white;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+/* Breakpoints to change header format and logo/cart size */
+@media screen and (min-width: 600px) {
+  header {
+    flex-flow: row nowrap;
+  }
+
+  #logo {
+    min-width: 100px;
+  }
+
+  #shopping-cart {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+/*
+=========================
+Navigation Styling
+=========================
+*/
+
+.top-nav {
+  order: 1;
+
+  margin: 1.5% 0 0;
+  width: 100%;
+}
+
+/* Formatting navigation elements + adding the line for mobile view */
+.top-nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  margin: 0;
+  padding: 3% 3% 0;
+
+  border-top: 1px solid #d7d7d7;
+}
+
+.top-nav ul li {
+  padding: 0 15px;
+
+  text-align: center;
+}
+
+/* adding some visual elements to nagivation */
+.top-nav ul li a {
+  color: #e2574c;
+  font-family: "Raleway Light", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* removing the text turning blue from the links */
+.top-nav ul li a:hover {
+  color: #e2574c;
+}
+
+/* changing order of header at tablet breakpoint */
+@media screen and (min-width: 600px) {
+  .top-nav {
+    order: 0;
+  }
+
+  /* removing the line for mobile, adjust padding for larger screen size */
+  .top-nav ul {
+    padding: 0 5%;
+
+    border-top: 0px solid white;
+  }
+}
+
+/*
+=========================
+Hero Banner Styling
+=========================
+*/
+
+/* give banner a background, special adjustment size and position to make it repeat and look as close to the provided images as possible */
+.hero-banner {
+  position: relative;
+  z-index: -2;
+
+  height: 530px;
+
+  background: url("../images/flower-bkgd.jpg") repeat-x center scroll;
+  background-size: 850px;
+  background-position-x: -200px;
+  color: white;
+}
+
+/* aligning banner text */
+.hero-banner-text {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+
+  height: 100%;
+
+  text-align: center;
+}
+
+.hero-banner-text h3,
+.hero-banner-text h1 {
+  margin: 0.5em 0;
+}
+
+.hero-banner-text h3 {
+  font-family: "Raleway Light", sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.hero-banner-text h1 {
+  order: 1;
+
+  font-family: "Playfair Display Regular", sans-serif;
+  font-size: 3em;
+  font-weight: lighter;
+  line-height: 1em;
+}
+
+/* empty div for banner girl, separate from normal background for greater control over their visual elements. Their specific sizes, repeats, etc. Added linear gradient as an additional picture overlayed on top to darken image */
+.banner-girl {
+  position: absolute;
+  z-index: -1;
+
+  width: 100%;
+  height: 108%;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../images/banner-girl.png") no-repeat scroll bottom;
+  background-size: auto 85%;
+}
+
+/* increase font size on bigger screen sizes */
+@media screen and (min-width: 600px) {
+  .hero-banner h1 {
+    font-size: 3.5em;
+  }
+}
+
+/* 
+=========================
+Main Styling
+=========================
+*/
+
+/* specifically assign white background to cut off portions of banner girl that sticks out */
+main {
+  background-color: white;
+  text-align: center;
+}
+
+/* centering and positioning text */
+main article {
+  margin: 0 auto;
+  padding: 10% 0;
+}
+
+#products-and-info h2 {
+  font-family: "Playfair Display Italic", sans-serif;
+  font-size: 3em;
+  font-weight: lighter;
+}
+
+#products-and-info h2 span {
+  font-family: "Playfair Display Bold", sans-serif;
+}
+
+/* 
+=========================
+Main Products Styling
+=========================
+*/
+
+/* Specific styling of 'hand crafted styles' portion */
+#info-main {
+  width: 90%;
+}
+
+#info-main p {
+  padding: 3% 0;
+  margin: 0;
+
+  font-family: "Raleway Medium", sans-serif;
+  font-size: 1.3em;
+  line-height: 2em;
+}
+
+/* Calculate desired width and height to maintain perfect aspect ratio. The squares will be 1:1, the rectangles will be 2:1 with a little excess to accomodate for grid gaps */
+:root {
+  --wrapperWidth: 100vw;
+  --gutter: 10px;
+  --noOfColumns: 2;
+
+  --noOfGutters: calc(var(--noOfColumns) - 1);
+
+  --rowHeight: calc(
+    (var(--wrapperWidth) - (var(--noOfGutters) * var(--gutter))) /
+      var(--noOfColumns)
+  );
+}
+
+/* initialize grid template for mobile view using the calculated dimensions */
+#main-products ul {
+  width: var(--wrapperWidth);
+  display: grid;
+  grid-gap: var(--gutter);
+  grid-template-columns: repeat(var(--noOfColumns), 1fr);
+  grid-auto-rows: var(--rowHeight);
+  grid-template-areas:
+    "a a"
+    "b c"
+    "d e"
+    "f f";
+}
+
+/* Initialize relative positioning for container to enable centering of text */
+#main-products li {
+  position: relative;
+}
+
+/* Centering text and adding layer to darken image */
+#main-products li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+}
+#main-products li a:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Add styling to category headings */
+#main-products h5 {
+  color: white;
+  font-family: "Raleway Light", sans-serif;
+  font-size: 2em;
+  text-shadow: 2px 2px 5px rgb(50, 50, 50);
+  text-transform: uppercase;
+}
+
+/* Assign and add picture to each grid position */
+.product-men {
+  grid-area: a;
+
+  background: url(../images/mens-category.jpg) center no-repeat;
+  background-size: 100%;
+}
+
+.product-trends {
+  grid-area: b;
+
+  background: url(../images/trends-category.jpg) center no-repeat;
+  background-size: 100%;
+}
+
+.product-glasses {
+  grid-area: c;
+
+  background: url(../images/glasses-category.jpg) center no-repeat;
+  background-size: 100%;
+}
+
+.product-sale {
+  grid-area: d;
+
+  background: url(../images/sale-category.jpg) center no-repeat;
+  background-size: 100%;
+}
+
+.product-bags {
+  grid-area: e;
+
+  background: url(../images/bags-category.jpg) center no-repeat;
+  background-size: 100%;
+}
+
+.product-women {
+  grid-area: f;
+
+  background: url(../images/womens-category.jpg) center no-repeat;
+  background-size: 100%;
+}
+
+/* Change width and height calculations to accomodate for larger screen size format. Change grid format */
+@media screen and (min-width: 600px) {
+  :root {
+    --noOfColumns: 4;
+    --noOfGutters: calc(var(--noOfColumns) - 1);
+    --rowHeight: calc(
+      (var(--wrapperWidth) - (var(--noOfGutters) * var(--gutter))) /
+        var(--noOfColumns)
+    );
+  }
+
+  #main-products ul {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: var(--rowHeight);
+    grid-template-areas:
+      "a a b c"
+      "d e f f";
+  }
+}
+
+/* Limit content area to 1240px width */
+@media screen and (min-width: 1240px) {
+  :root {
+    --wrapperWidth: 1240px;
+  }
+}
+
+/* 
+=========================
+Favourite Products Styling
+=========================
+*/
+
+/* General styling and positioning of favourite products section */
+.favourite-products {
+  margin-bottom: 5em;
+}
+
+.favourite-products li {
+  margin: 0 5%;
+}
+
+.favourite-products a {
+  width: 100%;
+
+  text-align: center;
+}
+
+.favourite-products img {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.favourite-products p {
+  color: #969696;
+  font-family: "Raleway Medium", sans-serif;
+}
+
+.descriptor {
+  font-size: 0.75em;
+  text-transform: uppercase;
+}
+
+.item-name {
+  color: #e2574c;
+  font-family: "Playfair Display Regular", sans-serif;
+  font-weight: lighter;
+  font-size: 1.5em;
+}
+
+/* Styling of add to cart button */
+.add-to-cart {
+  height: 0;
+  padding: 5%;
+
+  background-color: #e2574c;
+  border: 0px solid white;
+  border-radius: 15px;
+  color: white;
+  font-family: "Raleway Medium", sans-serif;
+}
+
+/* Positioning and formating the amount of items in cart section */
+.amount-in-cart {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+
+  margin-top: 10px;
+}
+
+/* Styling the part where it displays the amount of items in cart */
+.amount-in-cart input {
+  margin: 0 2px;
+  width: 20%;
+
+  border: 1px solid black;
+  text-align: center;
+}
+
+/* Styling the add to subtract from cart buttons */
+.amount-in-cart button {
+  width: 25px;
+
+  background-color: #e2574c;
+  border: 0px solid white;
+  border-radius: 3px;
+}
+
+/* 
+=========================
+Registration Form Styling
+=========================
+*/
+
+/* Positioning and sizing of register for updates section. Linear Gradient added to darken image, special background size to get the zoomed in effect like in the website pictures */
+#update-registration {
+  margin: 2% 0;
+  padding: 7.5% 2%;
+
+  color: white;
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(../images/wave-bkgd.jpg) bottom no-repeat;
+  background-size: 100% 250%;
+}
+
+/* Sizing and styling of text elements */
+.update-registration-content h2 {
+  margin: 0;
+  padding: 2% 0;
+
+  font-size: 2.5em;
+}
+
+.update-registration-content p {
+  margin: 0;
+  padding: 2% 2.5%;
+
+  font-size: 1.4em;
+  line-height: 1.8em;
+}
+
+/* Limit size of content area to better match the website pictures for larger screen sizes */
+@media screen and (min-width: 600px) {
+  .update-registration-content {
+    margin: 0 auto;
+    width: 95%;
+    max-width: 830px;
+  }
+}
+
+/* 
+=========================
+Email Submission Styling
+=========================
+*/
+
+/* Styling for form elements */
+.update-registration-content form {
+  position: relative;
+
+  padding: 5%;
+}
+
+.email-submission input {
+  border: 0px solid white;
+  border-radius: 50px;
+}
+
+/* Styling the enter email portion, the padding gives the element bulk */
+#user-email {
+  padding: 4% 5%;
+  height: 0;
+  width: 80%;
+
+  color: #969696;
+  font-family: "Raleway Light", sans-serif;
+}
+
+/* Styling the subscribe button. Fixed it to input email element. Again use padding to give the element bulk */
+#subscribe-email {
+  display: inline-block;
+  position: absolute;
+  top: 32.5%;
+  left: 60.2%;
+
+  padding: 3% 0%;
+  height: 0;
+  width: 25%;
+
+  color: white;
+  background-color: #e2574c;
+  font-family: "Raleway Medium", sans-serif;
+}
+
+/* 
+=========================
+Footer Styling
+=========================
+*/
+
+/* General footer styling and formatting */
+footer {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-items: center;
+
+  padding: 7.5%;
+
+  text-align: center;
+  background-color: #242424;
+}
+
+footer p,
+footer a {
+  color: white;
+}
+
+footer a:hover {
+  color: white;
+}
+
+/* Change how footer is formatted for larger screen sizes */
+@media screen and (min-width: 600px) {
+  footer {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+/* 
+=========================
+Additional Information Styling
+=========================
+*/
+
+/* Formatting information part of footer to make it all vertical */
+.additional-information {
+  display: flex;
+  flex-flow: column nowrap;
+
+  margin: 5% 0;
+
+  font-family: "Playfair Display Bold", sans-serif;
+}
+
+/* Adding space between information groupings, minor styling */
+.additional-information div {
+  margin: 2.5% 0;
+}
+
+.additional-information div p {
+  margin: 0;
+}
+
+.address-information p {
+  color: #969696;
+}
+
+/* Copyright icon size */
+.fa-copyright {
+  width: 7.5%;
+}
+
+/* 
+=========================
+Social Media Styling
+=========================
+*/
+
+/* Formating of social media portion of footer */
+.social-media {
+  margin: 2.5% 0;
+}
+
+.social-media ul {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+
+/* Give icons a bit of width, important when we later align social media text */
+.social-media i {
+  width: 10px;
+}
+
+/* Flexbox for formating social media links, horizontal for phones */
+.social-media a {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  margin: 7px 20px 7px 7px;
+
+  font-family: "Raleway Medium", sans-serif;
+}
+
+/* Hide social media text as they will not be displayed on phones */
+.social-media a p {
+  display: none;
+
+  margin: 0 0 0 20px;
+}
+
+/* Change social media format from horizontal to vertical on larger screen sizes, also show social media text */
+@media screen and (min-width: 600px) {
+  .social-media ul {
+    flex-flow: column nowrap;
+  }
+
+  .social-media a p {
+    display: inline-block;
+  }
+}

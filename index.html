@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Meta tags for viewport functionality, characterset, and description -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Kevin JC Li" />
+    <meta name="description" content="Aloha Apparel Products Homepage" />
+    <!-- Title and links to external resources -->
+    <title>Online-Shop</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <!-- Links to CSS files -->
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-sheet.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header containing logo, shop cart icon, and nav -->
+    <header>
+      <div id="logo">
+        <a href="#top">
+          <!-- <img src="images/aloha-logo.svg" alt="Aloha Apparel Logo"
+        /> -->
+          Online-Shop
+        </a>
+      </div>
+      <!-- Nav -->
+      <nav class="top-nav">
+        <ul>
+          <li><a href="#info-main">About</a></li>
+          <li><a href="#main-products">Shop</a></li>
+          <li><a href="#info-favourite">Feature</a></li>
+          <li><a href="#update-registration">Updates</a></li>
+        </ul>
+      </nav>
+      <div id="shopping-cart">
+        <a href="#"><img src="images/cart-icon.svg" alt="shopping cart" /></a>
+        <button class="items-in-cart" type="button">0</button>
+      </div>
+    </header>
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+      <!-- Empty Div to position and scale banner girl without interfering with banner background -->
+      <div class="banner-girl"></div>
+      <div class="hero-banner-text">
+        <h1>Spring/Summer 2016</h1>
+        <h3>New Collection</h3>
+      </div>
+    </section>
+    <!-- Main Section of website with product information, products, and the option to subscribe for updates -->
+    <main id="products-and-info">
+      <!-- Brief explanation of products -->
+      <article id="info-main">
+        <h2>Hand-Crafted <span>Styles</span></h2>
+        <p>
+          Online-Shop sells only the finest ready-to-travel clothing. Browse our
+          current selection of products or sign-up for updates below.
+        </p>
+      </article>
+      <!-- Main menu that will lead to different product category pages -->
+      <section id="main-products">
+        <ul>
+          <li class="product-men wide-pic">
+            <a href="#"><h5>men's</h5></a>
+          </li>
+          <li class="product-trends square-pic">
+            <a href="#"><h5>trends</h5></a>
+          </li>
+          <li class="product-glasses square-pic">
+            <a href="#"><h5>glasses</h5></a>
+          </li>
+          <li class="product-sale square-pic">
+            <a href="#"><h5>sale</h5></a>
+          </li>
+          <li class="product-bags square-pic">
+            <a href="#"><h5>bags</h5></a>
+          </li>
+          <li class="product-women wide-pic">
+            <a href="#"><h5>women's</h5></a>
+          </li>
+        </ul>
+      </section>
+      <!-- Favourite Products section -->
+      <article id="info-favourite">
+        <h2>Most-Loved <span>Products</span></h2>
+      </article>
+      <section class="favourite-products">
+        <!-- List of each product along with their respective information -->
+        <ul>
+          <!-- Wrapped in anchor tags. Although not strictly necessary for this project, I left them in because it makes sense to keep them there as you would expect to be led to their individual item pages if you click on them -->
+          <li>
+            <a>
+              <img src="images/checked-stretch-dress.jpg" />
+              <p class="descriptor">dresses</p>
+              <h4 class="item-name">Checked Stretch Dress</h4>
+              <p>$129.00</p>
+              <!-- Additional add to cart functionality to track how much of each individual items you have in the cart as well add more or subtract from the cart -->
+              <button class="add-to-cart" type="button">Add to Cart</button>
+              <div class="amount-in-cart">
+                <button class="decrease-incart" type="button">-</button>
+                <input
+                  class="currently-in-cart"
+                  type="text"
+                  value="0"
+                  readonly
+                />
+                <button class="increase-incart" type="button">+</button>
+              </div>
+            </a>
+          </li>
+          <!-- The above template is repeated for each individual product -->
+          <li>
+            <a>
+              <img src="images/blue-hipster-backpack.jpg" />
+              <p class="descriptor">bags</p>
+              <h4 class="item-name">Blue Hipster Backpack</h4>
+              <p>$69.00</p>
+              <button class="add-to-cart" type="button">Add to Cart</button>
+              <div class="amount-in-cart">
+                <button class="decrease-incart" type="button">-</button>
+                <input
+                  class="currently-in-cart"
+                  type="text"
+                  value="0"
+                  readonly
+                />
+                <button class="increase-incart" type="button">+</button>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img src="images/demin-overall-shorts.jpg" />
+              <p class="descriptor">demin</p>
+              <h4 class="item-name">Demin Overall Shorts</h4>
+              <p>$89.00</p>
+              <button class="add-to-cart" type="button">Add to Cart</button>
+              <div class="amount-in-cart">
+                <button class="decrease-incart" type="button">-</button>
+                <input
+                  class="currently-in-cart"
+                  type="text"
+                  value="0"
+                  readonly
+                />
+                <button class="increase-incart" type="button">+</button>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img src="images/pink-dotted-dress.jpg" />
+              <p class="descriptor">dresses</p>
+              <h4 class="item-name">Pink Dotted Dress</h4>
+              <p>$99.00</p>
+              <button class="add-to-cart" type="button">Add to Cart</button>
+              <div class="amount-in-cart">
+                <button class="decrease-incart" type="button">-</button>
+                <input
+                  class="currently-in-cart"
+                  type="text"
+                  value="0"
+                  readonly
+                />
+                <button class="increase-incart" type="button">+</button>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img src="images/blue-silk-dress.jpg" />
+              <p class="descriptor">dresses</p>
+              <h4 class="item-name">Blue Silk Dress</h4>
+              <p>$109.00</p>
+              <button class="add-to-cart" type="button">Add to Cart</button>
+              <div class="amount-in-cart">
+                <button class="decrease-incart" type="button">-</button>
+                <input
+                  class="currently-in-cart"
+                  type="text"
+                  value="0"
+                  readonly
+                />
+                <button class="increase-incart" type="button">+</button>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img src="images/cotton-blue-shirt.jpg" />
+              <p class="descriptor">shirts</p>
+              <h4 class="item-name">Cotton Blue Shirt</h4>
+              <p>$89.00</p>
+              <button class="add-to-cart" type="button">Add to Cart</button>
+              <div class="amount-in-cart">
+                <button class="decrease-incart" type="button">-</button>
+                <input
+                  class="currently-in-cart"
+                  type="text"
+                  value="0"
+                  readonly
+                />
+                <button class="increase-incart" type="button">+</button>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img src="images/cotton-yellow-tshirt.jpg" />
+              <p class="descriptor">shirts</p>
+              <h4 class="item-name">Cotton Yellow Shirt</h4>
+              <p>$29.00</p>
+              <button class="add-to-cart" type="button">Add to Cart</button>
+              <div class="amount-in-cart">
+                <button class="decrease-incart" type="button">-</button>
+                <input
+                  class="currently-in-cart"
+                  type="text"
+                  value="0"
+                  readonly
+                />
+                <button class="increase-incart" type="button">+</button>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a>
+              <img src="images/stretch-knit-dress.jpg" />
+              <p class="descriptor">dresses</p>
+              <h4 class="item-name">Stretch Knit Dress</h4>
+              <p>$169.00</p>
+              <button class="add-to-cart" type="button">Add to Cart</button>
+              <div class="amount-in-cart">
+                <button class="decrease-incart" type="button">-</button>
+                <input
+                  class="currently-in-cart"
+                  type="text"
+                  value="0"
+                  readonly
+                />
+                <button class="increase-incart" type="button">+</button>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- Subscribe for updates sections -->
+      <section id="update-registration">
+        <!-- Formating div to limit how wide the content area goes without interfering with the background image -->
+        <div class="update-registration-content">
+          <!-- Description and information on subscription -->
+          <h2>Sign-up for <span>Updates</span></h2>
+          <p>
+            Stay updated on our latest product releases, be first to find out
+            about upcoming sales, and get free style tips from our blog.
+            Unsubscribe at any time.
+          </p>
+          <!-- Form to allow for email submission -->
+          <form class="email-submission">
+            <input
+              id="user-email"
+              name="email"
+              type="email"
+              placeholder="Your Email"
+            />
+            <input id="subscribe-email" type="submit" value="Subscribe" />
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- Footer at the bottom of the page -->
+    <footer>
+      <!-- Information section containing details on copyright, contact information, and address -->
+      <div class="additional-information">
+        <div class="copyright-and-powered">
+          <p><i class="far fa-copyright"></i>2021 Online-Shop.com</p>
+          <p>Powered by HTML and CSS.</p>
+        </div>
+        <div class="contact-information">
+          <a href="tel:+6046046040">604-604-6040.</a>
+          <a href="email:info@alohaapparel.com">info@online-shop.com</a>
+        </div>
+        <div class="address-information">
+          <p>Yuelu Street</p>
+          <p>Changsha, Hunan, China</p>
+        </div>
+      </div>
+      <!-- Social Media section to get connected with Aloha -->
+      <div class="social-media">
+        <ul>
+          <li>
+            <a href="#">
+              <i class="fab fa-facebook-f"></i>
+              <p>Facebook</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+              <p>Twitter</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-instagram"></i>
+              <p>Instagram</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-pinterest"></i>
+              <p>Pinterest</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fab fa-google-plus-g"></i>
+              <p>Google+</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <!-- Links to JQuery, Flickity Javascript, and main Javascript -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
